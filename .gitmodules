@@ -1,0 +1,3 @@
+[submodule "vendor\\php\\AniList-php"]
+	path = vendor\\php\\AniList-php
+	url = https://github.com/Mika-/AniList-php

@@ -1,0 +1,279 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <title>Documentation Home - The Uniform Server PHP MiniServer</title>
+  <link href="common/css/main.css" rel="stylesheet" type="text/css">
+  <link href="common/css/menu.css" rel="stylesheet" type="text/css">
+</head>
+
+<body id="p10">
+<!-- Start header -->
+  <script language="javascript" src="common/header.js"></script>
+<!-- End header -->
+
+<table id="main" >
+<tr valign="top">
+
+<td id="td_menu">
+<script language="javascript" src="common/top_menu.js"></script>
+</td>
+
+<td id="td_spacer" >
+</td >
+
+<td id="td_content" >
+<!-- ============ Start Content ========== -->
+
+
+<h1>PHP MiniServer</h1>
+
+<h2>Introduction</h2>
+<p>Welcome to The PHP MiniServer and this documentation. The PHP MiniServer is a free and open source Windows PHP server suite. Comprising of PHP with its built-in web server an smpt mail client and an easy to use user interface utility. </p>
+
+<p>These components are integrated to provide a system suitable for both beginning webmasters and experienced developers. It is ideal for development use and small enough to carry on a USB memory stick, or even a camera's flash drive.</p>
+
+<p>We strongly suggest that you check over the points on this page as they provide important information that may help you avoid common problems. After that, if you are eager to get started, you can jump straight to the <a href="quick_start.html">quick start</a> guide. It will have you up and running in seconds.</p>
+
+<p>Note: This documentation is applicable to both MiniServer and MicroServer the MicroServer is a cut down PHP MiniServer specifically ICU is not included. </p>
+
+<table>
+<tr>
+<td>
+<div id="page_links_menu_shadow" >
+ <div id="page_links_menu" >
+  <ul>
+   <li><a href="#Background" >Background</a></li>
+   <li><a href="#Installation" >Installation</a></li>
+   <li><a href="#Installation Restriction" >Installation Restriction</a></li>
+   <li><a href="#Server Paths" >&nbsp;&nbsp;Server Paths</a></li>
+   <li><a href="#Other Issues" >Other Issues</a></li>
+   <li><a href="#VC9 Libraries" >&nbsp;&nbsp;VC9 Libraries</a></li>
+   <li><a href="#Windows 7, Vista and UAC" >&nbsp;&nbsp;Windows 7, Vista and UAC</a></li>
+   <li><a href="#Firewalls" >&nbsp;&nbsp;Firewalls</a></li>
+   <li><a href="#Where to next" >Where to next</a></li>
+   </ul>
+ </div>
+</div>
+</td>
+
+<td>
+&nbsp;&nbsp;&nbsp;&nbsp;
+</td>
+<td>
+<b><i>Features</i>:</b>
+  <ul>
+   <li>Single button to start and stop server.</li>
+   <li>Multi-server configuration allows running more than one server instance.</li>
+   <li>Menu options to change server port and perform port test.</li>
+   <li>Select server root folder from popup menu.</li>
+   <li>Select router file from popup menu.</li>
+   <li>Single button click to display a specific web page.</li>  
+   </ul>
+</td>
+</tr>
+</table>
+
+<a name="Background"></a>
+<h2>Background</h2>
+
+<p>Starting with PHP 5.4 is the addition of a built-in basic web server. Advantage of such a server it provides a self contained PHP development environment removing the need to use and configure third party servers such as Apache or IIS. Running the built-in server requires familiarity with the command line interface as follows.</p>
+<p>Note: The PHP MiniServer user interface utility provides a graphical user interface removing the need to remember command line sequences or creating batch files.</p>
+
+<table>
+<tr valign="top">
+<td>
+<b>Starting server:</b>
+<p>The PHP built-in server is started with the command-line option -S followed by a host address (either in numeric or alphabetic) and a port number delimited by a colon. The server will listen on the given address and port. Press CTRL-C to stop server.</p>
+
+<i>Host address</i>:
+<ul>
+<li><code>localhost</code> – Server is accessible only from local machine</li>
+<li><code>0.0.0.0</code> – Server is accessible from any interface wired or wireless.</li>
+<ul>
+<li><code>Providing local and Internet access</li>
+</ul>
+</ul>
+</td>
+
+<td>
+<pre>
+php -S localhost:8080
+</pre>
+<pre>
+&lt;full path&gt;\php -S localhost:8080
+</pre>
+</td>
+</tr>
+
+<tr valign="top">
+<td>
+<b>Specifying PHP configuration file:</b>
+<p>The PHP built-in server uses default file php.ini for its configuration options. You can target a different configuration file with the command-line option -c followed by the file to be used for example php2.ini.</p>
+
+</td>
+
+<td>
+<pre>
+php -S localhost:8080 -c php2.ini
+</pre>
+<pre>
+&lt;full path&gt;\php -S localhost:8080 -c &lt;full path&gt;\php2.ini
+</pre>
+</td>
+</tr>
+
+
+<tr valign="top">
+<td>
+<b>Specifying Document Root:</b>
+<p>The document root is specified using the -t option. If omitted, the current working directory is used.</p>
+
+Note: <i>Directory Indexes</i>:
+<ul>
+<li>If a request is made for a directory, the web server will return <br />index.html or index.php if they exist in the directory.</li>
+<li>If these files do not exist a not found message is returned.</li>
+</ul>
+</td>
+
+<td>
+<pre>
+php -S localhost:8080 -t docroot
+</pre>
+<pre>
+&lt;full path&gt;\php -S localhost:8080 -t &lt;full path&gt;\docroot
+</pre>
+</td>
+</tr>
+
+
+<tr valign="top">
+<td>
+<b>Specifying Router Script:</b>
+<p>Apache has the ability to redirect all incoming requests using URL rewriting.
+The PHP built-in server emulates this functionality using a router script. A router script is run on every request to the web server.</p>
+
+</td>
+
+<td>
+<pre>
+php -S localhost:8080 -t docroot router.php
+</pre>
+<pre>
+php -S localhost:8080 -t docroot &lt;full path&gt;\router.php
+</pre>
+</td>
+</tr>
+
+</table>
+<p>The output of a router script is parsed and executed by the server. If a router script returns false, the request is handled in the default manner. Otherwise, the script returns an appropriate response to the client.</p>
+
+<table>
+<tr valign="top">
+<td>
+<b>Router Script example:</b>
+<p>The following example checks incoming requests. If the requested resource exists it is returned. If the resource does not exist the user returned the index.php page.</p>
+
+</td>
+
+<td>
+<pre>
+ //Check resource exists
+ if (file_exists(__DIR__ . '/' . $_SERVER['REQUEST_URI'])){
+   return false;             // Exists serve resource as requested.
+ } else {                    // Not found
+   include_once 'index.php'; // Serve index page
+ }
+</pre>
+</td>
+</tr>
+</table>
+
+
+<b>Summary</b>
+<p>The command line has the following format when using all command line parameters :</p>
+<pre>
+&lt;full path&gt;\php -S localhost:8080 -c &lt;full path&gt;\php2.ini -t &lt;full path&gt;\docroot &lt;full path&gt;\router.php
+</pre>
+
+<script language="javascript" src="common/top.js"></script>
+<a name="Installation"></a>
+<h2>Installation</h2>
+
+<table>
+<tr valign="top">
+<td>
+<p>The PHP MiniServer does not have a typical program installation. Instead, just execute the downloaded file (UniServerMini_x_x_x.exe or UniServerMicro_x_x_x.exe).</p>
+
+<p>The installation extraction defaults to creating "C:\UniServerMini" or "C:\UniServerMicro".<br />
+Folder structure for UniServerMini is shown on the right. UniServerMicro folder structure is similar.<br />
+Once extracted, the server is <b>ready to run</b>.</p>
+</td>
+
+<td>
+  <img src="images/C9M_top_level_folders.gif" alt="US Folder structure" />
+</td>
+<tr>
+</table>
+
+<a name="Installation Restriction"></a>
+<h2>Installation Restriction</h2>
+
+<p>While it may seem that by this point you have successfully completed the installation, there is one aspect that needs to be validated.  This is especially true if you have been unable to start the server.</p>
+
+<a name="Server Paths"></a>
+<h3>Server Paths</h3>
+
+<p>The installation extraction defaults to creating "C:\UniServerMini" or "C:\UniServerMicro". The documentation examples assume this default. You can install The Uniform Server PHP MiniServer in nearly any location, with the exception that the path to folder UniServerMini and UniServerMicro must not contain spaces. Do not use "C:\Program Files", for example (which has other problems as well, such as restricted permissions and system restore inconsistencies). We recommend installing to the drive root, such as "C:\" or "D:\" for simplicity, but other locations, such as "C:\test1\appserver" work just as well. </p>
+
+<p><b><i>Note</i>:</b> The space character restriction is generic and applies to WAMP stacks as well. Many applications hosted on servers do not tolerate spaces in paths.</p>
+
+<p>If the current installation is on a faulty path, the situation can eaily be resolved by just moving the UniServerMini or UniServerMicro directory to a proper location.  You do not have to delete the directory and reinstall.  For example, just rename "D:\bad path\UniServerMini" to "D:\good_loc\UniServerMini".</p>  
+
+
+<script language="javascript" src="common/top.js"></script>
+<a name="Other Issues"></a>
+<h2>Other Issues</h2>
+
+
+<p>This section covers the basics a new user should be aware of.</p>
+
+<a name="VC9 Libraries"></a>
+<h3>VC9 Libraries</h3>
+
+<p>If you are using Windows XP as the OS platform for the PHP MiniServer, please be aware that you may need to install the Microsoft Visual C++ 2008 runtime 
+library. This can be found at <a href=http://www.microsoft.com/download/en/details.aspx?id=26368>Microsoft Visual C++ 2008 Service Pack 1 Redistributable Package ATL Security Update</a>.
+Be sure to select the package appropriate for your OS and hardware (x86, x64 or IA64).</p>
+<p>If you do not have the VC9 library, when you attempt to start the servers, you will get a runtime error popup.</p>
+
+<a name="Windows 7, Vista and UAC"></a>
+<h3>Windows 7, Vista and UAC</h3>
+
+The startup executables have been marked as requiring Administrator privilege.  When you start these programs, you must authorize this access in order to continue.
+
+<a name="Firewalls"></a>
+<h3>Firewalls</h3>
+
+<p>When you initially start the server, your firewall will sense the programs' requests for IP access, and (typically) will require your authorization to change the security.  If you have a third-party firewall activated (Symantic, ZoneAlarm, etc.), be sure to set the port access as required, since it may not display a message.</p>       
+
+<script language="javascript" src="common/top.js"></script>
+<a name="Where to next"></a>
+<h2>Where to next</h2>
+
+<p><a href="quick_start.html">Quick Start</a> - This page provides a quick start quide </p>
+
+
+<script language="javascript" src="common/top.js"></script>
+
+<!-- ============ End Content ============ -->
+</td>
+</tr>
+</table>
+
+
+<!-- Start footer -->
+  <script language="javascript" src="common/footer.js"></script>
+<!-- End footer -->
+
+</body>
+</html>

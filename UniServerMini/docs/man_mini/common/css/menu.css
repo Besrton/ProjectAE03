@@ -1,0 +1,70 @@
+/* Left menu */
+
+#lcontop {
+  width:200px;
+  padding-bottom:10px;
+}
+
+
+#lcon1 {
+  width:200px;
+  padding-bottom:10px;
+}
+
+.lmen1 {
+  font-size: 13px;
+  padding: 0px;
+  margin:0;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  line-height: 18px;
+}
+.lmen1 li {
+  list-style: none;
+  border-top:    1px solid #7F7FBB;
+  border-bottom: 1px solid #343477;
+  margin-bottom: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.lmen1 li a:link, .lmen1 li a:visited {
+  display: block;
+  width: 100%;
+  width: auto;
+  text-decoration: none;
+  background-color:  #4F4F96;
+  color: #eeeeee;
+  padding-left:5px;
+}
+
+.lmen1 li a:hover {
+  color: #ffffff;
+  background-color:  #2F2F76;
+}
+
+/* Highlight side menus current page top menu*/
+#p10   #lcontop .p10   a,
+#p20   #lcontop .p20   a,
+#p30   #lcontop .p30   a,
+#p40   #lcontop .p40   a,
+#p50   #lcontop .p50   a,
+#p60   #lcontop .p60   a,
+#p70   #lcontop .p70   a,
+#p80   #lcontop .p80   a
+
+{
+color: #ffffff;
+background-color:#222222;
+}
+
+/* Highlight side menus current page sub-menu*/
+
+#p25   #lcon1 .p25   a,
+#p27   #lcon1 .p27   a,
+#p30   #lcon1 .p30   a
+
+{
+color: #ffffff;
+background-color:#222222;
+}
+

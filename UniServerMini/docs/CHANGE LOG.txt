@@ -1,0 +1,49 @@
+﻿################################################################################
+# File name: CHANGE LOG.txt
+# Created By: The Uniform Server Development Team
+################################################################################
+
+----------------------------------------
+Uniform Server PHP MiniServer Change Log
+----------------------------------------
+
+1.0.10   - PHP updated to 5.4.12
+
+1.0.9    - PHP updated to 5.4.11
+
+1.0.8    - PHP updated to 5.4.10
+         - Added line to php ini files - enables com support
+
+1.0.7    - PHP updated to 5.4.9
+
+1.0.6    - Removed port check from timer.
+         - Updated documentation
+         - Logo update
+
+1.0.5    - Replaced msmtp with us_smtp
+         - Updated documentation
+         - PHP updated to 5.4.8
+
+1.0.4    - PHP updated to 5.4.7
+         - msmtp updated to 1.4.29
+
+1.0.3    - PHP updated to 5.4.6
+
+1.0.2    - PHP updated to 5.4.5
+
+1.0.1    - PHP updated to 5.4.4
+
+1.0.0    - First Release of UniServerMini
+         - PHP 5.4.3 
+         - msmtp 1.4.27
+         - UniController
+
+-------------------------------------------------------------------------------
+         Copyright 2002-2013 The Uniform Server Development Team
+                        All rights reserved.
+
+The authors were trying to make the best product so they cannot be held responsible
+for any type of damage or problems caused by using this or another software.
+
+                                 ---o0o---
+

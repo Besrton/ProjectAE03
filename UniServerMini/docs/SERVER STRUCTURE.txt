@@ -1,0 +1,75 @@
+﻿###############################################################################
+# File name: SERVER STRUCTURE.txt
+# Created By: The Uniform Server Development Team
+# 28-10-2012
+###############################################################################
+
+--------------------
+The Server Structure
+--------------------
+
+UniServerMini\
+  phpMiniServer1.exe         - Runs server menu
+  docs.bat                   - Short cut to documentation
+
+UniServerMini\core
+   Folder containing main server components
+
+UniServerMini\core\mini_server_config
+  mini_config.ini       -  Server configuration.
+
+UniServerMini\core\mini_server_config\backup_resources
+  mini_config.ini - Default server configuration
+  us_smtp.ini     - Default us_smtp configuration
+
+UniServerMini\core\mini_server_config\backup_resources\router
+  Default router folder content
+
+UniServerMini\core\mini_server_config\backup_resources\www
+  Default www folder content
+
+UniServerMini\core\php             - Main PHP folder
+
+UniServerMini\core\php\extensions  - PHP Extensions
+
+UniServerMini\core\router - Router example scripts
+
+UniServerMini\core\us_smtp - SMTP mail client
+  Contains executable and configuration file
+  us_smtp.ini         - Configuration file
+  Send_test_email.bat - Send text email 
+
+UniServerMini\docs - Documentation
+   CHANGE LOG.txt
+   SERVER STRUCTURE.txt
+
+UniServerMini\docs\licenses
+  Single location for all licenses
+
+UniServerMini\docs\man_mini
+  html documentation files
+
+UniServerMini\tmp
+  Temporally folder.
+
+UniServerMini\www  - Document root (/).
+  By default contains:
+   index.php
+   us_phpinfo.php
+   favicon.ico
+ 
+UniServerMini\www\images
+  Images directory
+
+UniServerMini\www\css
+  Common ccs files
+
+
+-------------------------------------------------------------------------------
+         Copyright 2002-2013 The Uniform Server Development Team
+                        All rights reserved.
+
+The authors were trying to make the best product so they cannot be held responsible
+for any type of damage or problems caused by using this or another software.
+
+                                 ---o0o---

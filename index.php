@@ -3,6 +3,7 @@
     ini_set('display_errors', 1);
 
     require_once('vendor/php/AniList/AniList.php');
+    require_once('vendor/php/GraphQL/GraphQL.php');
 
     // Obtenir serie per a la cerca
     $serie = filter_input(INPUT_POST, 'serie', FILTER_SANITIZE_STRING);

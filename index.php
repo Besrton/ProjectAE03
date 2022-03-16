@@ -43,7 +43,7 @@
         <?php require_once('views/header.php'); ?>
 
         <?php
-            echo($anilist->query($query, '{"id":15125}'));
+            //var_dump($anilist->query($query, '{"id":15125}'));
         ?>
         <main class="row">
             <div class="section">

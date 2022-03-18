@@ -10,13 +10,13 @@
     $search = filter_input(INPUT_POST, 'search', FILTER_SANITIZE_STRING);
     
     $anilist = new AniList();
-
+    
     if (!empty($search)) {
-        $series = $anilist->searchAiring($search);
+        $series = $anilist->searchAiring($search)['data']['Page']['media'];
     } else {
-        $series = $anilist->airing();
+        $series = $anilist->airing()['data']['Page']['media'];
     }
-        
+    //
     // Descomenta esta linia si vols veure el resultat
     //print("<pre>".print_r($series, true)."</pre>");
 
@@ -50,11 +50,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach($series['data']['Page']['media'] as $serie): ?>
+                        <?php foreach($series as $serie): ?>
                         <tr>
                             <td><?php echo($serie['id']); ?></td>
                             <td><?php echo($serie['title']['romaji'] . ' | ' . $serie['title']['native']); ?></td>
-                            <td><?php echo(""); //NOTA: Falta acabar aixo ?></td>
+                            <td><?php echo(!empty($serie['nextAiringEpisode']) ? 'Episodi: <strong>' . $serie['nextAiringEpisode']['episode'] . '</strong><br><span class="countdown">' . $anilist->secondsToDate($serie['nextAiringEpisode']['timeUntilAiring'], '%a:%h:%i:%s') . '</span>' : 'desconegut'); ?></td>
                             <td><img src="<?php echo($serie['coverImage']['large']); ?>"></td>
                         </tr>   
                         <?php endforeach; ?>
@@ -66,8 +66,12 @@
                     </tfoot>
                 </table>
 
-            
+                Comptador de prova: <span class="countdown">1:1:1:5</span>
+                
             </div>
         </main>
+
+        <script src="vendor/js/jQuery/jquery-3.6.0.slim.min.js"></script>
+        <script src="js/coutdown.js"></script>
     </body>
 </html>

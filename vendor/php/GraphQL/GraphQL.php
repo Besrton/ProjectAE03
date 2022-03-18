@@ -10,7 +10,7 @@
             $this->token = $token;
         }
 
-        public function query($query, $variables) {
+        public function query($query, $variables = []) {
 
             if (is_file($query))
                 $query = file_get_contents($query);

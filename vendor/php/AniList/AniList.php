@@ -10,11 +10,11 @@
 
 
         public function airing() {
-            return $this->graphql->query('graphql/airing.graphql');
+            return $this->graphql->query('graphql/airing.graphql', ['page'=> 1, 'perPage' => 5]);
         }
 
         public function searchAiring($search) {
-            $response = $this->graphql->query('graphql/airing.graphql', ['search' => $search]);
+            $response = $this->graphql->query('graphql/airing.graphql', ['search' => $search, 'page'=> 1, 'perPage' => 5]);
 
             return $response;
         }

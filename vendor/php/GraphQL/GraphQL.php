@@ -24,6 +24,7 @@
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+            //echo('{"query":' . json_encode($query) . ', "variables":' . json_encode($variables) . '}');
             curl_setopt($ch, CURLOPT_POSTFIELDS, '{"query":' . json_encode($query) . ', "variables":' . json_encode($variables) . '}');
             curl_setopt($ch,CURLOPT_HTTPHEADER, array('Content-Type: application/json; Accept: application/json; charset=UTF-8'. (isset($token) ? 'Authorization: Bearer ' . $token : '')));
 

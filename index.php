@@ -54,7 +54,8 @@
                         <tr>
                             <td><?php echo($serie['id']); ?></td>
                             <td><?php echo($serie['title']['romaji'] . ' | ' . $serie['title']['native']); ?></td>
-                            <td><?php echo(!empty($serie['nextAiringEpisode']) ? 'Episodi: <strong>' . $serie['nextAiringEpisode']['episode'] . '</strong><br><span class="countdown">' . $anilist->secondsToDate($serie['nextAiringEpisode']['timeUntilAiring'], '%a:%h:%i:%s') . '</span>' : 'desconegut'); ?></td>
+                            <td><?php echo(!empty($serie['nextAiringEpisode']) ? 'Episodi: <strong>' . $serie['nextAiringEpisode']['episode'] . '</strong><br><span data-countdown="' . $serie['nextAiringEpisode']['timeUntilAiring'] . '"></span>' : 'desconegut'); ?></td>
+                            <!-- <td><?php echo(!empty($serie['nextAiringEpisode']) ? 'Episodi: <strong>' . $serie['nextAiringEpisode']['episode'] . '</strong><br><span class="countdown">' . $anilist->secondsToDate($serie['nextAiringEpisode']['timeUntilAiring'], '%a:%h:%i:%s') . '</span>' : 'desconegut'); ?></td> -->
                             <td><img src="<?php echo($serie['coverImage']['large']); ?>"></td>
                         </tr>   
                         <?php endforeach; ?>
@@ -66,7 +67,7 @@
                     </tfoot>
                 </table>
 
-                Comptador de prova: <span class="countdown">1:1:1:5</span>
+                Comptador de prova: <span data-countdown="">1:1:1:5</span>
                 
             </div>
         </main>

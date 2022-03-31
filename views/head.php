@@ -2,7 +2,6 @@
 <head lang='en'>
     
     <!-- Metadades -->
-    <meta charset='IE=edge' http-equiv='X-UA-Compatible'>
     <meta charset='utf8'>
     <meta content='width=device-width, initial-scale=0.7, maximum-scale=1' name='viewport'>
     <meta content='#0f0f0f' name='theme-color'> <!-- NOTE: canviar el color tematic -->
@@ -11,6 +10,7 @@
     <!-- Titol -->
     <title>Page Title</title>
 
-    <!-- Estils -->
-    <link rel='stylesheet' href='vendor/css/vital/vital.min.css'>
+    <!-- Estils: https://milligram.io/ -->
+    <link rel='stylesheet' href='vendor/css/normalize/normalize.css'>
+    <link rel='stylesheet' href='vendor/css/milligram/milligram.min.css'>
 </head>

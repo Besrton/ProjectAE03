@@ -22,6 +22,10 @@
 
 ?>
 
+
+
+
+
 <!DOCTYPE html>
 
 <?php require_once('views/head.php'); ?>
@@ -29,12 +33,15 @@
 <html>
     <body>
         
-        <?php require_once('views/header.php'); ?>
 
-        <?php
-            //var_dump($anilist->query($query, '{"id":15125}'));
-        ?>
-        <main class="row">
+
+        <main class="wrapper">
+
+            <?php 
+                require_once('views/navbar.php');
+                require_once('views/header.php');
+            ?>
+
             <div class="section">
                 <form class="col" action="index.php" method="POST">
                     <input placeholder="search" name="search" type="search" class="col">
@@ -70,7 +77,11 @@
                 Comptador de prova: <span data-countdown="">1:1:1:5</span>
                 
             </div>
+
+            <section class="container" id="subscribe"><div class="row row-center"><div class="column"><h3 class="title">Subscribe to our newsletter</h3><p>The latest news and resources sent straight to your inbox.</p></div><div class="column subscribe-column"><form class="row row-center" action="https://airform.io/cjpatoilo@gmail.com" method="post"><input class="subscribe-input" type="email" id="email" maxlength="80" name="email" placeholder="Email address" required=""><button class="subscribe-button">Subscribe</button></form></div></div></section>
         </main>
+
+
 
         <script src="vendor/js/jQuery/jquery-3.6.0.slim.min.js"></script>
         <script src="js/coutdown.js"></script>

@@ -1,5 +1,3 @@
-<header class="row">
-    <nav class="section">
-        
-    </nav>
+<header class="header">
+    <section class="container"></section>
 </header>

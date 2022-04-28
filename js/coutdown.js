@@ -42,7 +42,10 @@
             let m = Math.floor(timer % 3600 / 60);
             let s = Math.floor(timer % 60);
 
-            counter.text(d + ' days ' + h + ' hours '  + m + ' minutes ' + s + ' seconds');
+            counter.find(".days").text(d);
+            counter.find(".minutes").text(d);
+            counter.find(".hours").text(h);
+            counter.find(".seconds").text(s);
 
             if (--timer < 0) {
                 clearInterval(coutdown);

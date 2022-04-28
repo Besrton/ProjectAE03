@@ -1,0 +1,2 @@
+-- Fitxer per generar la base de dades:
+-- https://database.guide/export-entire-sqlite-database-to-sql-file/

@@ -22,10 +22,6 @@
 
 ?>
 
-
-
-
-
 <!DOCTYPE html>
 
 <?php require_once('views/head.php'); ?>
@@ -35,54 +31,55 @@
         
 
 
-        <main class="wrapper">
+        <main>
 
-            <?php 
-                require_once('views/navbar.php');
-                require_once('views/header.php');
-            ?>
+            <?php require_once('views/header.php'); ?>
 
-            <div class="section">
-                <form class="col" action="index.php" method="POST">
-                    <input placeholder="search" name="search" type="search" class="col">
-                    <input type="submit" value="Search" class="btn small solid">
+            <section class="container">
+                <form class="search" action="index.php" method="POST">
+                    <input placeholder="Search" name="search">
+                    <input type="submit" value="search">
                 </form>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nom</th>
-                            <th>Proxim episodi</th>
-                            <th>Imatge</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach($series as $serie): ?>
-                        <tr>
-                            <td><?php echo($serie['id']); ?></td>
-                            <td><?php echo($serie['title']['romaji'] . ' | ' . $serie['title']['native']); ?></td>
-                            <td><?php echo(!empty($serie['nextAiringEpisode']) ? 'Episodi: <strong>' . $serie['nextAiringEpisode']['episode'] . '</strong><br><span data-countdown="' . $serie['nextAiringEpisode']['timeUntilAiring'] . '"></span>' : 'desconegut'); ?></td>
-                            <!-- <td><?php echo(!empty($serie['nextAiringEpisode']) ? 'Episodi: <strong>' . $serie['nextAiringEpisode']['episode'] . '</strong><br><span class="countdown">' . $anilist->secondsToDate($serie['nextAiringEpisode']['timeUntilAiring'], '%a:%h:%i:%s') . '</span>' : 'desconegut'); ?></td> -->
-                            <td><img src="<?php echo($serie['coverImage']['large']); ?>"></td>
-                        </tr>   
-                        <?php endforeach; ?>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <td colspan="3">Footer</td>
-                        </tr>
-                    </tfoot>
-                </table>
+            </section>
+            <section class="container">
+
+                <div class="row cards">
+                    <?php foreach($series as $serie): ?>
+                        <div class="column column-25">
+                            <div class="card">
+                                <div class="content">
+                                    <small class="episode">Episode: <?php echo($serie['nextAiringEpisode']['episode']); ?></small>
+                                    <img src="<?php echo($serie['coverImage']['large']); ?>">
+                                    <strong class="title"><?php echo($serie['title']['romaji']); ?></strong>
+                                </div>
+                                <div class="row countdown" <?php echo(!empty($serie['nextAiringEpisode']) ? 'data-countdown="' . $serie['nextAiringEpisode']['timeUntilAiring'] . '"' : ''); ?>>                                
+                                    <div>
+                                        <div class="days">0</div>
+                                        <small>Days</small>
+                                    </div>
+                                    <div>
+                                        <div class="hours">0</div>
+                                        <small>Hours</small>
+                                    </div>
+                                    <div>
+                                        <div class="minutes">0</div>
+                                        <small>Minutes</small>
+                                    </div>
+                                    <div>
+                                        <div class="seconds">0</div>
+                                        <small>Seconds</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+
 
                 Comptador de prova: <span data-countdown="">1:1:1:5</span>
                 
-            </div>
-
-            <section class="container" id="subscribe"><div class="row row-center"><div class="column"><h3 class="title">Subscribe to our newsletter</h3><p>The latest news and resources sent straight to your inbox.</p></div><div class="column subscribe-column"><form class="row row-center" action="https://airform.io/cjpatoilo@gmail.com" method="post"><input class="subscribe-input" type="email" id="email" maxlength="80" name="email" placeholder="Email address" required=""><button class="subscribe-button">Subscribe</button></form></div></div></section>
+            </section>
         </main>
-
-
-
         <script src="vendor/js/jQuery/jquery-3.6.0.slim.min.js"></script>
         <script src="js/coutdown.js"></script>
     </body>

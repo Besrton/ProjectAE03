@@ -10,7 +10,7 @@
 
 
         public function airing() {
-            return $this->graphql->query('graphql/airing.graphql', ['page'=> 1, 'perPage' => 5]);
+            return $this->graphql->query('graphql/airing.graphql', ['page'=> 1, 'perPage' => 12]);
         }
 
         public function searchAiring($search) {

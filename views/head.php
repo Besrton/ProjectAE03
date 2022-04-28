@@ -13,4 +13,8 @@
     <!-- Estils: https://milligram.io/ -->
     <link rel='stylesheet' href='vendor/css/normalize/normalize.css'>
     <link rel='stylesheet' href='vendor/css/milligram/milligram.min.css'>
+
+    <!-- Estils: personalitzats -->
+    <link rel='stylesheet' href='css/main.css'>
+
 </head>

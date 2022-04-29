@@ -64,11 +64,11 @@
                                     </div>
                                     <div>
                                         <strong class="countdown-minutes">0</strong>
-                                        <small>Minutes</small>
+                                        <small>Mins</small>
                                     </div>
                                     <div>
                                         <strong class="countdown-seconds">0</strong>
-                                        <small>Seconds</small>
+                                        <small>Secs</small>
                                     </div>
                                 </div>
                             </div>

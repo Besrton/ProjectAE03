@@ -1,0 +1,153 @@
+{
+    "data": {
+      "Page": {
+        "pageInfo": {
+          "total": 5000,
+          "currentPage": 1,
+          "lastPage": 500
+        },
+        "media": [
+          {
+            "id": 21,
+            "title": {
+              "romaji": "ONE PIECE",
+              "native": "ONE PIECE"
+            },
+            "coverImage": {
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/nx21-tXMN3Y20PIL9.jpg"
+            },
+            "nextAiringEpisode": {
+              "episode": 1016,
+              "timeUntilAiring": 130007
+            }
+          },
+          {
+            "id": 97938,
+            "title": {
+              "romaji": "BORUTO: NARUTO NEXT GENERATIONS",
+              "native": "BORUTO-ボルト- NARUTO NEXT GENERATIONS"
+            },
+            "coverImage": {
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx97938-BnF6M5yTaNB1.jpg"
+            },
+            "nextAiringEpisode": {
+              "episode": 247,
+              "timeUntilAiring": 158807
+            }
+          },
+          {
+            "id": 140960,
+            "title": {
+              "romaji": "SPY×FAMILY",
+              "native": "SPY×FAMILY"
+            },
+            "coverImage": {
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx140960-Yl5M3AiLZAMq.png"
+            },
+            "nextAiringEpisode": {
+              "episode": 4,
+              "timeUntilAiring": 92207
+            }
+          },
+          {
+            "id": 111321,
+            "title": {
+              "romaji": "Tate no Yuusha no Nariagari Season 2",
+              "native": "盾の勇者の成り上がり Season2"
+            },
+            "coverImage": {
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/b111321-3MFjZgG1muls.jpg"
+            },
+            "nextAiringEpisode": {
+              "episode": 5,
+              "timeUntilAiring": 434207
+            }
+          },
+          {
+            "id": 125367,
+            "title": {
+              "romaji": "Kaguya-sama wa Kokurasetai: Ultra Romantic",
+              "native": "かぐや様は告らせたい-ウルトラロマンティック-"
+            },
+            "coverImage": {
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx125367-bl5vGalMH2cC.png"
+            },
+            "nextAiringEpisode": {
+              "episode": 4,
+              "timeUntilAiring": 9407
+            }
+          },
+          {
+            "id": 127911,
+            "title": {
+              "romaji": "Kawaii dake ja Nai Shikimori-san",
+              "native": "可愛いだけじゃない式守さん"
+            },
+            "coverImage": {
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx127911-nKrY6sdaflPK.jpg"
+            },
+            "nextAiringEpisode": {
+              "episode": 4,
+              "timeUntilAiring": 103007
+            }
+          },
+          {
+            "id": 142984,
+            "title": {
+              "romaji": "Komi-san wa, Komyushou desu. 2",
+              "native": "古見さんは、コミュ症です。2"
+            },
+            "coverImage": {
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx142984-nv2MWVWZ1yYH.jpg"
+            },
+            "nextAiringEpisode": {
+              "episode": 5,
+              "timeUntilAiring": 441407
+            }
+          },
+          {
+            "id": 235,
+            "title": {
+              "romaji": "Meitantei Conan",
+              "native": "名探偵コナン"
+            },
+            "coverImage": {
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx235-XucEZpR3CRaV.jpg"
+            },
+            "nextAiringEpisode": {
+              "episode": 1041,
+              "timeUntilAiring": 74207
+            }
+          },
+          {
+            "id": 137281,
+            "title": {
+              "romaji": "Aharen-san wa Hakarenai",
+              "native": "阿波連さんははかれない"
+            },
+            "coverImage": {
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx137281-xdjPqk8SIv69.png"
+            },
+            "nextAiringEpisode": {
+              "episode": 5,
+              "timeUntilAiring": 18107
+            }
+          },
+          {
+            "id": 116605,
+            "title": {
+              "romaji": "Date A Live IV",
+              "native": "デート・ア・ライブIV"
+            },
+            "coverImage": {
+              "large": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx116605-uzDakXnaZ1OW.jpg"
+            },
+            "nextAiringEpisode": {
+              "episode": 4,
+              "timeUntilAiring": 2207
+            }
+          }
+        ]
+      }
+    }
+  }

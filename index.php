@@ -2,8 +2,8 @@
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
 
-    require_once('vendor/php/AniList/AniList.php');
-    require_once('vendor/php/GraphQL/GraphQL.php');
+    require_once('src/php/AniList/AniList.php');
+    require_once('src/php/GraphQL/GraphQL.php');
 
     // Obtenir serie per a la cerca
     $series = [];
@@ -14,7 +14,8 @@
     if (!empty($search)) {
         $series = $anilist->searchAiring($search)['data']['Page']['media'];
     } else {
-        $series = $anilist->airing()['data']['Page']['media'];
+        //$series = $anilist->airing()['data']['Page']['media'];
+        $series = json_decode(file_get_contents("data.json"), true)['data']['Page']['media'];
     }
     //
     // Descomenta esta linia si vols veure el resultat
@@ -54,19 +55,19 @@
                                 </div>
                                 <div class="row countdown" <?php echo(!empty($serie['nextAiringEpisode']) ? 'data-countdown="' . $serie['nextAiringEpisode']['timeUntilAiring'] . '"' : ''); ?>>                                
                                     <div>
-                                        <div class="days">0</div>
+                                        <div class="countdown-days">0</div>
                                         <small>Days</small>
                                     </div>
                                     <div>
-                                        <div class="hours">0</div>
+                                        <div class="countdown-hours">0</div>
                                         <small>Hours</small>
                                     </div>
                                     <div>
-                                        <div class="minutes">0</div>
+                                        <div class="countdown-minutes">0</div>
                                         <small>Minutes</small>
                                     </div>
                                     <div>
-                                        <div class="seconds">0</div>
+                                        <div class="countdown-seconds">0</div>
                                         <small>Seconds</small>
                                     </div>
                                 </div>
@@ -81,6 +82,6 @@
             </section>
         </main>
         <script src="vendor/js/jQuery/jquery-3.6.0.slim.min.js"></script>
-        <script src="js/coutdown.js"></script>
+        <script src="src/js/coutdown.js"></script>
     </body>
 </html>

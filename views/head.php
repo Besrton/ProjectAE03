@@ -15,6 +15,6 @@
     <link rel='stylesheet' href='vendor/css/milligram/milligram.min.css'>
 
     <!-- Estils: personalitzats -->
-    <link rel='stylesheet' href='css/main.css'>
+    <link rel='stylesheet' href='src/css/main.css'>
 
 </head>

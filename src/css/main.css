@@ -1,14 +1,33 @@
-/* 
 
-  +--------------------------------+
-  |             Colors             |
-  +---------+------------+---------+
-  | Primary | Secoundary |  Accent |
-  +---------+------------+---------+
-  | #F7F7F7 |   #2C3333  | #FC4F4F |
-  +---------+------------+---------+
 
-*/
+:root {
+
+    /* 
+
+        +-------------------------------+
+        |             Colors            |
+        +---------+-----------+---------+
+        | Primary | Secondary |  Accent |
+        +---------+-----------+---------+
+        | #F7F7F7 |  #2C3333  | #FC4F4F |
+        +---------+-----------+---------+
+
+        Rule: 60% Primary, 30% Secondary, 10% Accent.
+
+    */
+
+    --color-primary: white;/* #f4f4f4 */
+    --color-secondary: #2c3333; /* #0f0f0f */
+    --color-accent: #fc4f4f; /* #ff5645 */
+
+    --color-hover-accent: #fc4f4f;
+
+}
+
+
+html {
+    background-color: var(--color-primary);
+}
 
 nav {
   display: flex;
@@ -78,12 +97,12 @@ form.search > input:first-child {
 .card .countdown {
   text-align: center;
   color: white;
-  background: #9b4dca;
+  background: var(--color-secondary);
   padding: 1rem;
 }
 
 .card .episode {
-  background-color: #9b4dca;
+  background-color: var(--color-secondary);
   position: absolute;
   padding: 0.2rem 0.8rem;
   border-radius: 0.8rem;
@@ -108,5 +127,16 @@ form.search > input:first-child {
 }
 
 .card .countdown {
-  justify-content: space-around;
+}
+
+.card .countdown > div {
+    width: 100%;
+}
+
+.card .countdown > div + div {
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.card .countdown *[class^="countdown-"] {
+    color: var(--color-accent);
 }

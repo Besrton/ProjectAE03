@@ -49,25 +49,25 @@
                         <div class="column column-25">
                             <div class="card">
                                 <div class="content">
-                                    <small class="episode">Episode: <?php echo($serie['nextAiringEpisode']['episode']); ?></small>
+                                    <small class="episode">Episode: <strong><?php echo($serie['nextAiringEpisode']['episode']); ?></strong></small>
                                     <img src="<?php echo($serie['coverImage']['large']); ?>">
-                                    <strong class="title"><?php echo($serie['title']['romaji']); ?></strong>
+                                    <div class="title"><?php echo($serie['title']['romaji']); ?></div>
                                 </div>
                                 <div class="row countdown" <?php echo(!empty($serie['nextAiringEpisode']) ? 'data-countdown="' . $serie['nextAiringEpisode']['timeUntilAiring'] . '"' : ''); ?>>                                
                                     <div>
-                                        <div class="countdown-days">0</div>
+                                        <strong class="countdown-days">0</strong>
                                         <small>Days</small>
                                     </div>
                                     <div>
-                                        <div class="countdown-hours">0</div>
+                                        <strong class="countdown-hours">0</strong>
                                         <small>Hours</small>
                                     </div>
                                     <div>
-                                        <div class="countdown-minutes">0</div>
+                                        <strong class="countdown-minutes">0</strong>
                                         <small>Minutes</small>
                                     </div>
                                     <div>
-                                        <div class="countdown-seconds">0</div>
+                                        <strong class="countdown-seconds">0</strong>
                                         <small>Seconds</small>
                                     </div>
                                 </div>

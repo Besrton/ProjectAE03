@@ -2,8 +2,8 @@
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
 
-    require_once('src/php/AniList/AniList.php');
-    require_once('src/php/GraphQL/GraphQL.php');
+    require_once('vendor/php/AniList/AniList.php');
+    require_once('vendor/php/GraphQL/GraphQL.php');
 
     // Obtenir serie per a la cerca
     $series = [];
@@ -14,8 +14,7 @@
     if (!empty($search)) {
         $series = $anilist->searchAiring($search)['data']['Page']['media'];
     } else {
-        //$series = $anilist->airing()['data']['Page']['media'];
-        $series = json_decode(file_get_contents("data.json"), true)['data']['Page']['media'];
+        $series = $anilist->airing()['data']['Page']['media'];
     }
     //
     // Descomenta esta linia si vols veure el resultat
@@ -49,26 +48,26 @@
                         <div class="column column-25">
                             <div class="card">
                                 <div class="content">
-                                    <small class="episode">Episode: <strong><?php echo($serie['nextAiringEpisode']['episode']); ?></strong></small>
+                                    <small class="episode">Episode: <?php echo($serie['nextAiringEpisode']['episode']); ?></small>
                                     <img src="<?php echo($serie['coverImage']['large']); ?>">
-                                    <div class="title"><?php echo($serie['title']['romaji']); ?></div>
+                                    <strong class="title"><?php echo($serie['title']['romaji']); ?></strong>
                                 </div>
                                 <div class="row countdown" <?php echo(!empty($serie['nextAiringEpisode']) ? 'data-countdown="' . $serie['nextAiringEpisode']['timeUntilAiring'] . '"' : ''); ?>>                                
                                     <div>
-                                        <strong class="countdown-days">0</strong>
+                                        <div class="days">0</div>
                                         <small>Days</small>
                                     </div>
                                     <div>
-                                        <strong class="countdown-hours">0</strong>
+                                        <div class="hours">0</div>
                                         <small>Hours</small>
                                     </div>
                                     <div>
-                                        <strong class="countdown-minutes">0</strong>
-                                        <small>Mins</small>
+                                        <div class="minutes">0</div>
+                                        <small>Minutes</small>
                                     </div>
                                     <div>
-                                        <strong class="countdown-seconds">0</strong>
-                                        <small>Secs</small>
+                                        <div class="seconds">0</div>
+                                        <small>Seconds</small>
                                     </div>
                                 </div>
                             </div>
@@ -82,6 +81,6 @@
             </section>
         </main>
         <script src="vendor/js/jQuery/jquery-3.6.0.slim.min.js"></script>
-        <script src="src/js/coutdown.js"></script>
+        <script src="js/coutdown.js"></script>
     </body>
 </html>

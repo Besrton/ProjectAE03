@@ -2,8 +2,8 @@
     error_reporting(E_ALL);
     ini_set('display_errors', 1);
 
-    require_once('vendor/php/AniList/AniList.php');
-    require_once('vendor/php/GraphQL/GraphQL.php');
+    require_once('src/php/AniList/AniList.php');
+    require_once('src/php/GraphQL/GraphQL.php');
 
     // Obtenir serie per a la cerca
     $series = [];
@@ -14,7 +14,8 @@
     if (!empty($search)) {
         $series = $anilist->searchAiring($search)['data']['Page']['media'];
     } else {
-        $series = $anilist->airing()['data']['Page']['media'];
+        //$series = $anilist->airing()['data']['Page']['media'];
+        $series = json_decode(file_get_contents("data.json"), true)['data']['Page']['media'];
     }
     //
     // Descomenta esta linia si vols veure el resultat
@@ -47,27 +48,30 @@
                     <?php foreach($series as $serie): ?>
                         <div class="column column-25">
                             <div class="card">
-                                <div class="content">
-                                    <small class="episode">Episode: <?php echo($serie['nextAiringEpisode']['episode']); ?></small>
+
+                                <div class="header">
                                     <img src="<?php echo($serie['coverImage']['large']); ?>">
-                                    <strong class="title"><?php echo($serie['title']['romaji']); ?></strong>
                                 </div>
-                                <div class="row countdown" <?php echo(!empty($serie['nextAiringEpisode']) ? 'data-countdown="' . $serie['nextAiringEpisode']['timeUntilAiring'] . '"' : ''); ?>>                                
+                                <div class="content">
+                                    <strong class="title"><?php echo($serie['title']['romaji']); ?></strong>
+                                    <small class="episode">Episode: <strong><?php echo($serie['nextAiringEpisode']['episode']); ?></strong></small>
+                                </div>
+                                <div class="footer countdown" <?php echo(!empty($serie['nextAiringEpisode']) ? 'data-countdown="' . $serie['nextAiringEpisode']['timeUntilAiring'] . '"' : ''); ?>>                                
                                     <div>
-                                        <div class="days">0</div>
+                                        <strong class="countdown-days">0</strong>
                                         <small>Days</small>
                                     </div>
                                     <div>
-                                        <div class="hours">0</div>
+                                        <strong class="countdown-hours">0</strong>
                                         <small>Hours</small>
                                     </div>
                                     <div>
-                                        <div class="minutes">0</div>
-                                        <small>Minutes</small>
+                                        <strong class="countdown-minutes">0</strong>
+                                        <small>Mins</small>
                                     </div>
                                     <div>
-                                        <div class="seconds">0</div>
-                                        <small>Seconds</small>
+                                        <strong class="countdown-seconds">0</strong>
+                                        <small>Secs</small>
                                     </div>
                                 </div>
                             </div>
@@ -81,6 +85,6 @@
             </section>
         </main>
         <script src="vendor/js/jQuery/jquery-3.6.0.slim.min.js"></script>
-        <script src="js/coutdown.js"></script>
+        <script src="src/js/coutdown.js"></script>
     </body>
 </html>

@@ -1,7 +1,7 @@
 /* Milligram Overrides */
 
 body {
-    color: var(--color-hover-accent);
+    color: var(--color-secondary);
 }
 .button, button, input[type='button'], input[type='reset'], input[type='submit'] {
     background-color: var(--color-accent);

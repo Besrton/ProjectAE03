@@ -10,11 +10,13 @@
     <!-- Titol -->
     <title>Page Title</title>
 
-    <!-- Estils: https://milligram.io/ -->
+    <!-- Estils: https://milligram.io -->
     <link rel='stylesheet' href='vendor/css/normalize/normalize.css'>
     <link rel='stylesheet' href='vendor/css/milligram/milligram.min.css'>
 
     <!-- Estils: personalitzats -->
-    <link rel='stylesheet' href='css/main.css'>
+    <link rel='stylesheet' href='src/css/main.css'>
 
+    <!-- Estils: overrides de Milligram -->
+    <link rel="stylesheet" href="src/css/overrides.css">
 </head>
